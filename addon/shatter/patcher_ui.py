@@ -137,13 +137,19 @@ class PatchLibsmashhit(bpy_extras.io_utils.ImportHelper, Operator):
     
     do_segmentrealpaths: BoolProperty(
         name = "Use absolute paths for segments",
-        description = "Patch the game so it use absolute paths. ",
+        description = "Forcing the game to use absolute paths. ",
+        default = False,
+    )
+    
+    do_obstaclerealpaths: BoolProperty(
+        name = "Use absolute paths for obstacles",
+        description = "Forcing the game to use absolute paths. ",
         default = False,
     )
     
     do_realpaths: BoolProperty(
         name = "Use absolute paths for rooms and levels",
-        description = "Patch the game so it use absolute paths. ",
+        description = "Forcing the game to absolute paths. ",
         default = False,
     )
     
@@ -206,6 +212,7 @@ class PatchLibsmashhit(bpy_extras.io_utils.ImportHelper, Operator):
         self.drawItem(ui, "dropballs", pl)
         self.drawItem(ui, "checkpoints", pl)
         self.drawItem(ui, "segmentrealpaths", pl)
+        self.drawItem(ui, "obstaclerealpaths", pl)
         self.drawItem(ui, "realpaths", pl)
         self.drawItem(ui, "roomtime", pl)
         self.drawItem(ui, "trainingballs", pl)
@@ -251,6 +258,9 @@ class PatchLibsmashhit(bpy_extras.io_utils.ImportHelper, Operator):
         
         if (self.do_segmentrealpaths):
             patches["segmentrealpaths"] = []
+        
+        if (self.do_obstaclerealpaths):
+            patches["obstaclerealpaths"] = []
         
         if (self.do_realpaths):
             patches["realpaths"] = []
