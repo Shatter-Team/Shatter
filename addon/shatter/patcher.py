@@ -259,13 +259,16 @@ def _patch_v142_v143_arm64_checkpoints(patcher, params):
     patcher.patch(0x57c84, b"\x1f\x00\x00\x71")
     patcher.patch(0x57c88, b"\x40\x03\x00\x54")
 
-def _patch_v142_v143_arm64_segmentrealpaths(patcher, params):
-    patcher.patch(0x2119f8, b"\x00")
+def _patch_v142_v143_arm64_segmentrealpaths(f, value):
+	f.patch(0x2119f8, b"\x00")
 
-def _patch_v142_v143_arm64_realpaths(patcher, params):
-    patcher.patch(0x2118e8, b"\x00")
-    patcher.patch(0x1f48c0, b"\x00")
-    
+def _patch_v142_v143_arm64_obstaclerealpaths(f, value):
+	f.patch(0x211930, b"\x00")
+
+def _patch_v142_v143_arm64_realpaths(f, value):
+	f.patch(0x2118e8, b"\x00")
+	f.patch(0x1f48c0, b"\x00")
+
 def _patch_v142_v143_arm64_roomtime(patcher, params):
     value = float(params[0]) if len(params) > 0 else None
     
@@ -310,6 +313,7 @@ _LIBSMASHHIT_V142_V143_ARM64_PATCH_TABLE = {
     "dropballs": _patch_v142_v143_arm64_dropballs,
     "checkpoints": _patch_v142_v143_arm64_checkpoints,
     "segmentrealpaths": _patch_v142_v143_arm64_segmentrealpaths,
+    "obstaclerealpaths": _patch_v142_v143_arm64_obstaclerealpaths,
     "realpaths": _patch_v142_v143_arm64_realpaths,
     "roomtime": _patch_v142_v143_arm64_roomtime,
     "trainingballs": _patch_v142_v143_arm64_trainingballs,
