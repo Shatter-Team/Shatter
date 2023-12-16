@@ -573,8 +573,6 @@ class sh_SceneProperties(PropertyGroup):
 		name = "Gravity",
 		description = "The amount of gravity to use in quick test",
 		default = 1.0,
-		min = -1.0,
-		max = 3.0,
 	)
 	
 	sh_extra_code: StringProperty(
@@ -586,9 +584,8 @@ class sh_SceneProperties(PropertyGroup):
 	sh_room_length: IntProperty(
 		name = "Room length",
 		description = "The length of the room in quick test",
-		default = 90,
-		min = 50,
-		max = 250,
+		default = 200,
+        	min = 1,
 	)
 
 # Object (box/obstacle/powerup/decal/water) properties
