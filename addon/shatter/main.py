@@ -1546,6 +1546,10 @@ def register():
 *         - \x1b[33mTails Nine\x1b[0m, \x1b[35m2024\x1b[0m                                 *
 **************************************************************""")
 	
+	for num in common.BL_INFO['version']:
+		if (type(num) != int):
+			util.log(f"Warning: Non-integer value detected in Shatter version ({repr(num)})! This will cause issues when packaging Shatter for automatic updates.")
+	
 	from bpy.utils import register_class
 	
 	for cls in classes:
