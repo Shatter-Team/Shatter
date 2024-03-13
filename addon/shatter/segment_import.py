@@ -133,10 +133,6 @@ def sh_import_segment(fp, context, compressed = False):
 				show_message("Import error", "The creator of this segment has requested that it not be imported. While you could bypass this, we encourage you to respect this request.")
 				return {"FINISHED"}
 			
-			elif (d == "Segstrate" or d == "segstrate"):
-				show_message("Import error", "This segment cannot be imported because it is protected with Segstrate.")
-				return {"FINISHED"}
-			
 			else:
 				warnings.add(f"an unknown type of drm '{d}' is being used")
 	

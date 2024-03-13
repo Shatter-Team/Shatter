@@ -207,7 +207,7 @@ def sh_create_root(scene, params):
 	
 	# Protection
 	if (scene.sh_drm_disallow_import or prefs().force_disallow_import):
-		seg_props["drm"] = "NoImport"
+		seg_props["drm"] = "no_import"
 	
 	# Create main root and return it
 	level_root = et.Element("segment", seg_props)

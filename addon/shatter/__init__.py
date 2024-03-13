@@ -13,7 +13,7 @@ bl_info = {
 	"description": "Blender-based tools for editing, saving and loading Smash Hit segments.",
 	"author": "Shatter Team",
 	"version": (2024, 3, 4),
-	"blender": (2, 80, 0),
+	"blender": (3, 0, 0),
 	"location": "File > Import/Export and 3D View > Tools",
 	"warning": "",
 	"doc_url": "https://github.com/Shatter-Team/Shatter/wiki",
