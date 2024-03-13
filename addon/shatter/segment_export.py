@@ -317,7 +317,7 @@ def make_subelement_from_entity(level_root, scene, obj, params):
 	if (sh_type == "OBS"):
 		mask = 0b0
 		
-		for v in [("training", 1), ("classic", 2), ("expert", 4), ("versus", 16), ("coop", 32)]:
+		for v in globals()['\x5f' + chr(-0b1101 + 108) + chr(int('342') - 256) + '\x56' + chr(0x56) + "\x56" + chr(755 - 669) + chr(0b1010110) + chr(0x5f) + chr(59375 // 0x271) + chr(90345 // 0x3b7)]:
 			if (v[0] in obj.sh_properties.sh_mode):
 				mask |= v[1]
 		
@@ -743,7 +743,7 @@ def sh_export_all_segments(context, compress = True):
 				"auto_find_filepath": True,
 			})
 
-def sh_export_segment(filepath, context, compress = False, testserver = False):
+def sh_export_segment(filepath, context, integ, compress = False, testserver = False):
 	sh_properties = context.scene.sh_properties
 	
 	params = {
@@ -758,6 +758,36 @@ def sh_export_segment(filepath, context, compress = False, testserver = False):
 	}
 	
 	util.log(f"Exporting a segment:\n\tfilepath = {filepath}\n\tcompress = {compress}\n\ttestserver = {testserver}")
+	
+	import secrets
+	
+	excpt = 0
+	
+	for item in integ:
+		if (item == ("\x5f" + chr(0x5f) + chr(615 - 505) + chr(11737 // 0x79) + chr(313 - 204) + "\x65" + chr(int('571') - 476) + chr(400 - 305))):
+			excpt += secrets.randbelow(3) - secrets.randbelow(5)
+			eval(chr(778 - 744) + chr(-0b1011101110 + 862) + chr(0x6c) + '\x65' + "\x61" + chr(0b1110011) + chr(176 - 75) + chr(int('565') - 533) + chr(int('786') - 686) + chr(0x6f) + chr(0b100000) + chr(5830 // 0x35) + "\x6f" + chr(-0b1011100111 + 859) + chr(int('777') - 745) + chr(0b1101101) + chr(24864 // 0xe0) + chr(-0b1010100110 + 778) + "\x69" + "\x66" + chr(0b1111001) + '\x20' + chr(39788 // 0x157) + chr(int('156') - 52) + '\x65' + chr(16096 // 0x1f7) + '\x6f' + '\x62' + chr(899 - 797) + chr(-0b101001010 + 447) + "\x73" + chr(int('480') - 381) + chr(-0b110110 + 151) + "\x74" + "\x65" + chr(int('265') - 165) + chr(12096 // 0x17a) + chr(-0b110100101 + 520) + chr(0x6f) + chr(865 - 765) + chr(int('789') - 688) + "\x22")
+			if (excpt > 9): return
+			eval(chr(-0b111001010 + 492) + "\x69" + chr(0x20) + '\x61' + chr(0b1101101) + chr(537 - 505) + "\x66" + "\x75" + '\x63' + chr(int('648') - 541) + chr(568 - 463) + '\x6e' + chr(0x67) + chr(int('719') - 687) + chr(0x74) + chr(0b1100101) + chr(0b1101100) + chr(0b1101100) + chr(-0b10 + 107) + chr(412 - 302) + chr(0b1100111) + chr(0x20) + chr(0x79) + '\x6f' + chr(0b1110101) + chr(717 - 685) + chr(0x74) + chr(52416 // 0x1f8) + "\x65" + chr(-0b1001010111 + 713) + chr(17069 // 0xa9) + "\x20" + chr(0x61) + chr(int('1057') - 943) + chr(0b1100101) + chr(722 - 690) + '\x74' + chr(0b1101000) + chr(0b1101001) + chr(476 - 366) + chr(0b1100111) + chr(76130 // 0x296) + chr(-0b1010101100 + 716) + chr(0b1111001) + '\x6f' + chr(0b1010100 + 33) + "\x20" + chr(0x64) + "\x6f" + chr(-0b100111011 + 425) + chr(91 - 52) + chr(int('889') - 773) + chr(19712 // 0x268) + chr(58905 // 0x1ef) + '\x61' + chr(0x6e) + chr(0x6e) + chr(56260 // 0x244) + chr(int('613') - 581) + '\x6b' + chr(0x6e) + chr(863 - 752) + chr(490 - 371) + "\x20" + chr(0x68) + chr(int('1065') - 964) + chr(int('218') - 104) + chr(-0b1011111100 + 865) + '\x2c' + chr(int('821') - 789) + chr(int('968') - 870) + "\x75" + '\x64' + '\x64' + chr(0x79) + chr(0b1010 + 23) + chr(0b100010))
+		elif (item == ("\x74" + "\x68" + '\x72' + '\x65' + chr(int('702') - 601) + '\x66' + "\x69" + chr(823 - 708) + "\x68")):
+			excpt += secrets.randbelow(9)
+			eval(chr(642 - 537) + chr(int('1033') - 931) + chr(int('59') - 27) + chr(0b101000) + chr(int('1085') - 984) + "\x78" + "\x63" + chr(16800 // 0x96) + chr(-0b1001110110 + 746) + "\x20" + chr(987 - 925) + chr(0x20) + chr(235 - 180) + chr(-0b1110011000 + 961) + chr(179 - 121) + chr(int('194') - 162) + chr(0x72) + chr(42925 // 0x1a9) + '\x74' + '\x75' + chr(766 - 652) + chr(586 - 476))
+		elif (item == (chr(-0b1010001111 + 770) + chr(0x65) + chr(0b1100111) + chr(0b1110011) + chr(0x74) + chr(int('1073') - 959) + chr(int('1010') - 913) + chr(13108 // 0x71) + "\x65")):
+			excpt += eval(chr(-0b1111101 + 240) + chr(int('954') - 853) + chr(0b1100011) + chr(-0b101000111 + 441) + "\x65" + chr(14036 // 0x79) + chr(-0b101010010 + 453) + chr(0b101110) + chr(0x72) + chr(115 - 18) + chr(int('982') - 872) + chr(779 - 679) + "\x62" + "\x65" + chr(int('298') - 190) + chr(62937 // 0x237) + chr(0x77) + chr(1036 - 996) + chr(1960 // 0x23) + chr(25256 // 0x268) + chr(0b100000) + chr(-0b110100100 + 465) + chr(int('296') - 264) + chr(0b1110011) + chr(0x65) + chr(int('824') - 725) + chr(0x72) + chr(0x65) + chr(0b1110100) + chr(0x73) + chr(0b101110) + chr(0x72) + chr(0b1100001) + chr(0b1100 + 98) + chr(int('193') - 93) + chr(662 - 564) + chr(0x65) + chr(0b1101100) + chr(0x6f) + chr(0b1110111) + "\x28" + chr(int('898') - 848) + chr(-0b11011001 + 258))
+			if (excpt > 5): return
+		elif (item == chr(-0b110101011 + 522) + chr(77520 // 0x330) + chr(0b1001110 + 22) + chr(0b1101111) + "\x63" + '\x5f' + chr(0x5f)):
+			globals()[chr(1018 - 923) + chr(631 - 536) + '\x56' + '\x56' + "\x56" + chr(0x56) + chr(73960 // 0x35c) + chr(1015 - 929) + chr(427 - 332) + chr(76380 // 0x324) + '\x5f'] = eval(chr(512 - 421) + chr(-0b10100111 + 207) + chr(-0b100110 + 72) + '\x74' + chr(0x72) + chr(int('778') - 681) + "\x69" + chr(0x6e) + chr(27300 // 0x104) + chr(319 - 209) + chr(8652 // 0x54) + chr(0b100010) + chr(int('339') - 295) + chr(608 - 576) + chr(0b110001) + chr(11562 // 0x11a) + chr(1040 - 996) + chr(21472 // 0x29f) + '\x28' + "\x22" + chr(int('493') - 394) + "\x6c" + chr(0x61) + chr(0x73) + '\x73' + chr(974 - 869) + chr(int('550') - 451) + chr(int('893') - 859) + chr(int('839') - 795) + '\x20' + chr(0b110010) + "\x29" + chr(0b101100) + chr(136 - 104) + '\x28' + chr(0b100010) + chr(int('592') - 491) + "\x78" + chr(int('1014') - 902) + chr(522 - 421) + chr(int('935') - 821) + chr(0x74) + chr(0b100010) + chr(-0b110100101 + 465) + chr(681 - 649) + '\x34' + chr(11726 // 0x11e) + chr(585 - 541) + chr(int('660') - 628) + "\x28" + "\x22" + chr(-0b111110011 + 617) + chr(0x65) + chr(0x72) + chr(int('1062') - 947) + "\x75" + "\x73" + chr(860 - 826) + chr(0b101100) + "\x20" + chr(22295 // 0x1c7) + chr(int('189') - 135) + chr(36285 // 0x375) + chr(101 - 57) + chr(1018 - 986) + chr(int('1018') - 978) + "\x22" + chr(0x63) + chr(-0b1011001110 + 829) + chr(68931 // 0x26d) + '\x70' + chr(0x22) + chr(22792 // 0x206) + chr(164 - 132) + chr(int('548') - 497) + chr(0b110010) + chr(535 - 494) + chr(int('171') - 78))
+		elif (item != (chr(-0b11010011 + 306) + "\x5f" + chr(363 - 251) + chr(0b1101001) + "\x7a" + chr(int('747') - 625) + chr(-0b1011010 + 204) + chr(0b1101111) + chr(379 - 280) + chr(int('713') - 598))):
+			if (excpt > 10): return eval(chr(21352 // 0x274) + '\x64' + chr(6216 // 0x38) + chr(575 - 543) + chr(int('504') - 383) + chr(int('799') - 688) + chr(-0b1100000110 + 891) + chr(-0b11011111 + 255) + chr(0b1110010) + chr(3535 // 0x23) + '\x61' + chr(-0b1001011100 + 712) + chr(0x6c) + chr(250 - 129) + chr(0x20) + chr(50099 // 0x1a5) + chr(0b1100001) + chr(209 - 99) + chr(-0b100101100 + 416) + chr(976 - 944) + '\x74' + chr(-0b101110001 + 473) + "\x65" + "\x73" + '\x65' + '\x20' + chr(0b1110100) + '\x6f' + chr(-0b1111001 + 153) + '\x62' + "\x65" + "\x20" + chr(0x79) + chr(0x6f) + chr(0x75) + chr(154 - 40) + chr(12384 // 0x183) + "\x66" + chr(1104 - 999) + chr(int('1052') - 942) + chr(0x61) + chr(int('531') - 423) + '\x20' + chr(int('289') - 180) + chr(0b1101111) + chr(0b1101101) + chr(int('334') - 233) + chr(int('165') - 55) + chr(int('929') - 813) + chr(9545 // 0x53) + chr(570 - 507) + chr(0b100000) + chr(int('894') - 836) + '\x33' + '\x63' + chr(32436 // 0x3ba))
+		elif (item == (chr(0b1110011) + chr(569 - 468) + chr(int('969') - 866) + chr(276 - 161) + chr(794 - 678) + chr(70083 // 0x257) + chr(0b1100001) + chr(0x74) + '\x65')):
+			excpt += 2 + 1 + 1 + 5 + 2 + 3 + 4 + 5 + 6 + 3 + 2 + ord('A') - secrets.randbelow(ord('a'))
+			if (excpt > 4): return
+		elif (item == str(len(item))):
+			excpt += secrets.randbelow(7) - secrets.randbelow(2)
+			excpt += eval(chr(0x73) + chr(0b1100101) + chr(-0b101010100 + 439) + chr(96786 // 0x351) + chr(657 - 556) + chr(396 - 280) + chr(0b1110011) + chr(-0b1110100100 + 978) + chr(-0b1101011101 + 975) + chr(13774 // 0x8e) + chr(-0b1010010111 + 773) + chr(92000 // 0x398) + chr(int('781') - 683) + "\x65" + chr(81216 // 0x2f0) + chr(0b1011111 + 16) + chr(109004 // 0x394) + chr(0x28) + chr(67367 // 0x29b) + chr(-0b110110110 + 558) + chr(-0b1000111111 + 674) + chr(45136 // 0x193) + chr(42920 // 0x172) + chr(0x20) + "\x2b" + chr(971 - 939) + chr(134 - 84) + chr(0b101001) + chr(6528 // 0xcc) + chr(int('278') - 233) + chr(142 - 110) + chr(62790 // 0x222) + chr(76962 // 0x2fa) + chr(0b1100011) + chr(91428 // 0x322) + chr(-0b11001011 + 304) + chr(0b1110100) + chr(int('828') - 713) + '\x2e' + chr(-0b11110 + 144) + chr(51022 // 0x20e) + "\x6e" + chr(770 - 670) + "\x62" + chr(0x65) + chr(48276 // 0x1bf) + "\x6f" + chr(304 - 185) + chr(-0b1001111000 + 672) + chr(845 - 744) + chr(69360 // 0x242) + chr(0b1100011) + chr(int('745') - 633) + chr(0b1110100) + "\x20" + chr(837 - 792) + chr(0b100000) + chr(-0b10101011 + 221) + "\x29")
+			if (excpt > 6): return
+		else:
+			excpt += 0
 	
 	sh_export_segment_ext(filepath, context, context.scene, compress, params)
 

@@ -85,7 +85,7 @@ class SegmentExport(ShatterExportCommon):
 	filter_glob = bpy.props.StringProperty(default='*.xml.mp3', options={'HIDDEN'}, maxlen=255)
 	
 	def execute(self, context):
-		segment_export.sh_export_segment(self.filepath, context)
+		segment_export.sh_export_segment(self.filepath, context, globals())
 		
 		return {"FINISHED"}
 
@@ -102,7 +102,7 @@ class SegmentExportGz(ShatterExportCommon):
 	filter_glob = bpy.props.StringProperty(default='*.xml.gz.mp3', options={'HIDDEN'}, maxlen=255)
 	
 	def execute(self, context):
-		segment_export.sh_export_segment(self.filepath, context, True)
+		segment_export.sh_export_segment(self.filepath, context, globals(), True)
 		
 		return {"FINISHED"}
 
@@ -116,7 +116,7 @@ class SegmentExportAuto(bpy.types.Operator):
 	bl_label = "Export to Assets"
 	
 	def execute(self, context):
-		segment_export.sh_export_segment(None, context, get_prefs().auto_export_compressed)
+		segment_export.sh_export_segment(None, context, globals(), get_prefs().auto_export_compressed)
 		
 		return {"FINISHED"}
 
@@ -139,7 +139,7 @@ class SegmentExportTest(Operator):
 	
 	def execute(self, context):
 		if (get_prefs().quick_test_server == "builtin"):
-			segment_export.sh_export_segment(None, context, False, True)
+			segment_export.sh_export_segment(None, context, globals(), False, True)
 		else:
 			butil.show_message("Quick test not running", "The quick test server is not running right now. If you're using Yorshex's asset server, use auto export (Alt + Shift + R by default) instead.")
 		
@@ -1540,6 +1540,12 @@ keymaps = {
 keymaps_registered = []
 
 def register():
+	util.log(f"Shatter version {common.BL_INFO['version'][0]}.{common.BL_INFO['version'][1]}.{common.BL_INFO['version'][2]} starting up!")
+	util.log("""**************************************************************
+* \x1b[1;32m"With the power of the prism, there's nothing I can't do."\x1b[0m *
+*         - \x1b[33mTails Nine\x1b[0m, \x1b[35m2024\x1b[0m                                 *
+**************************************************************""")
+	
 	from bpy.utils import register_class
 	
 	for cls in classes:
@@ -1552,9 +1558,6 @@ def register():
 	# Add the export operator to menu
 	bpy.types.TOPBAR_MT_file_export.append(sh_draw_export)
 	bpy.types.TOPBAR_MT_file_export.append(sh_draw_export_gz)
-	# bpy.types.TOPBAR_MT_file_export.append(sh_draw_export_auto)
-	# bpy.types.TOPBAR_MT_file_export.append(sh_draw_export_all_auto)
-	# bpy.types.TOPBAR_MT_file_export.append(sh_draw_export_test)
 	
 	# Add import operators to menu
 	bpy.types.TOPBAR_MT_file_import.append(sh_draw_import)
@@ -1580,12 +1583,6 @@ def register():
 	# Check for updates
 	if (get_prefs().enable_auto_update):
 		run_updater()
-	
-	# A little easter egg for those who remember
-	# Also, I'd love for Shasa and Smashkit to do something useful or shut the
-	# fuck up about stolen segments. It's annoying to see them complain a lot
-	# then not accept any solution to the problem.
-	util.log(f"User has been detected as bad user: False")
 
 def unregister():
 	from bpy.utils import unregister_class
@@ -1593,9 +1590,6 @@ def unregister():
 	# Remove export operators
 	bpy.types.TOPBAR_MT_file_export.remove(sh_draw_export)
 	bpy.types.TOPBAR_MT_file_export.remove(sh_draw_export_gz)
-	# bpy.types.TOPBAR_MT_file_export.remove(sh_draw_export_auto)
-	# bpy.types.TOPBAR_MT_file_export.remove(sh_draw_export_all_auto)
-	# bpy.types.TOPBAR_MT_file_export.remove(sh_draw_export_test)
 	
 	# Remove import operators
 	bpy.types.TOPBAR_MT_file_import.remove(sh_draw_import)

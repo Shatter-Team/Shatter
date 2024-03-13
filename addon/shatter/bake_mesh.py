@@ -1112,7 +1112,4 @@ using templates from <templates> if specified. It is automaticlly inferred if
 if (__name__ == "__main__"):
 	main()
 else:
-	log(f"""BakeMesh v{VERSION[0]}.{VERSION[1]}.{VERSION[2]} is copyright (C) 2021 - 2024 Knot. Please see LICENCE for details.
-
-"With the power of the prism, there's nothing I can't do."
-                               - Tails Nine, 2024""")
+	log(f"""BakeMesh v{VERSION[0]}.{VERSION[1]}.{VERSION[2]} is copyright (C) 2021 - 2024 Knot126""")
