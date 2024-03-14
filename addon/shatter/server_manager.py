@@ -91,7 +91,7 @@ def cb_yorshex(asset_dir, level):
 	script_path = str(Path(__file__).parent) + "/asset_server.py"
 	
 	# Check file hash
-	if (not util.check_file_hash(script_path, "515b62fd5f829f6a57405b223b53191d3c55c9f0e52cb64a555ba4b0288466f1")):
+	if (not util.check_file_hash(script_path, "2f13f8748c801193c663074ac09092c019df47b62bc045969d383d0f13bf2c82")):
 		util.log("Error: asset_server.py file hash does not match expected hash!")
 		os._exit(0)
 	

@@ -169,12 +169,12 @@ def set_file_gzip(path, data):
 	f.write(data.encode('utf-8'))
 	f.close()
 
-def check_file_hash(path, filehash, length = 32):
+def check_file_hash(path, filehash):
 	"""
 	Check the hash of the file against "h". True if equal, False otherwise
 	"""
 	
-	return shake256(get_file(path), length) == filehash
+	return sha256(get_file(path)) == filehash
 
 def prepare_folders(path):
 	"""
@@ -326,7 +326,7 @@ def load_module(path):
 	if (not os.path.exists(path)):
 		return None
 	
-	module_name = "module_" + shake256(path)
+	module_name = "module_" + sha256(path)
 	
 	spec = importlib.util.spec_from_file_location(module_name, path)
 	module = importlib.util.module_from_spec(spec)
